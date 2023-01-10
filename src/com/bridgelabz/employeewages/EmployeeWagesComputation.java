@@ -29,7 +29,7 @@ public class EmployeeWagesComputation {
                 System.out.println("Employee is Absent");
 
         }
-        System.out.println("daily wage for Day=" + dailywage);
+        System.out.println("daily wage for Day =" + dailywage);
 
     }
 }
