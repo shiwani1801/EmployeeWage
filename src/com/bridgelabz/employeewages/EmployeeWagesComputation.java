@@ -29,7 +29,7 @@ public class EmployeeWagesComputation {
                     dailywage = PARTTIME_DAY_HOUR * WAGES_PER_HOUR;
                     workingHour+=PARTTIME_DAY_HOUR;
 
-                    System.out.println("Employee is Present");
+                    System.out.println("Employee is Present ");
                     System.out.println("Employee is Parttime");
                     break;
 
