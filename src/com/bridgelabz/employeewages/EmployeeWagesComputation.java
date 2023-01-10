@@ -22,7 +22,7 @@ public class EmployeeWagesComputation {
         } else {
             System.out.println("Employee is Absent");
 
-        }System.out.println("daily wage for Day="+ dailyWage);
+        }System.out.println("daily wage for Day=" + dailyWage);
     }
 }
 
