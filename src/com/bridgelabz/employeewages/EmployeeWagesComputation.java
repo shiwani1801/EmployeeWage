@@ -1,31 +1,37 @@
 package com.bridgelabz.employeewages;
 
 public class EmployeeWagesComputation {
-    //static variables
-    public static final int IS_FULL_TIME = 1;
-    public static final int IS_PART_TIME = 2;
+    //constants
+     static final int IS_FULL_TIME = 1;
+     static final int IS_PART_TIME = 2;
 
     //instance variables
-    public final int empRatePerHr;
-    public final int numberOfWorkingDays;
-    public final int maxWorkingHrs;
+    public int empWagePerHour;
+    public int maxWokringDays;
+    public int maxWorkingHrs;
+    public String companyName;
 
     //constructor
-    public EmployeeWagesComputation(int empRaterPerHr,int numOfWorkingDays,int maxWorkingHrs )
+    public EmployeeWagesComputation(String companyName,int empWagePerHour,int maxWorkingDays,int maxWorkingHrs)
     {
-        this.empRatePerHr = empRaterPerHr;
-        this.numberOfWorkingDays = numOfWorkingDays;
+        this.companyName = companyName;
+        this.empWagePerHour = empWagePerHour;
+        this.maxWokringDays = maxWorkingDays;
         this.maxWorkingHrs = maxWorkingHrs;
     }
-    static void getEmployeeWage() {
+
+    public void calculateEmployeeWage()
+    {
         //variables
-        int salary=0;
-        int empHrs=0;
+        int monthlyEmpWage=0;
         int totalWorkingDays=0;
         int totalEmpHrs=0;
-        EmployeeWagesComputation employee = new EmployeeWagesComputation(20,20,100);
-        while (totalWorkingDays<=employee.numberOfWorkingDays && totalEmpHrs<=employee.maxWorkingHrs)
+        System.out.println("Welcome to Employee Computation Program");
+
+        while (totalWorkingDays<maxWokringDays && totalEmpHrs<maxWorkingHrs)
         {
+            int empHrs=0;
+            int dailyEmpWage=0;
             totalWorkingDays++;
             double empCheck = Math.floor(Math.random() * 10) % 3;
             switch ((int)empCheck) {
@@ -39,13 +45,18 @@ public class EmployeeWagesComputation {
                 default:
                     System.out.println("Employee is absent");
             }
-            totalEmpHrs += empHrs;
+            dailyEmpWage = empWagePerHour *empHrs;
+            totalEmpHrs  += empHrs;
+            monthlyEmpWage += dailyEmpWage;
         }
-        salary = (totalEmpHrs * employee.empRatePerHr);
-        System.out.println("Employee Wage for a month is "+salary);
+        System.out.println("Employee Wage for a month in "+companyName+ " is "+monthlyEmpWage);
     }
     public static void main(String args[]) {
-        System.out.println("Welcome to Employee Computation Program");
-        EmployeeWagesComputation.getEmployeeWage();
+        EmployeeWagesComputation Tata = new EmployeeWagesComputation("Tata",20,20,100);
+        Tata.calculateEmployeeWage();
+        EmployeeWagesComputation Wipro = new EmployeeWagesComputation("Wipro",15,25,150);
+        Wipro.calculateEmployeeWage();
+        EmployeeWagesComputation TCS= new EmployeeWagesComputation("TCS",20,30,200);
+        TCS.calculateEmployeeWage();
     }
 }
