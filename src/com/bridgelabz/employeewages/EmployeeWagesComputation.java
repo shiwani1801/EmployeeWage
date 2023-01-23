@@ -1,62 +1,34 @@
 package com.bridgelabz.employeewages;
 
 public class EmployeeWagesComputation {
-    //constants
-     static final int IS_FULL_TIME = 1;
-     static final int IS_PART_TIME = 2;
-
-    //instance variables
-    public int empWagePerHour;
-    public int maxWokringDays;
-    public int maxWorkingHrs;
-    public String companyName;
-
-    //constructor
-    public EmployeeWagesComputation(String companyName,int empWagePerHour,int maxWorkingDays,int maxWorkingHrs)
+    // Default Constructor
+    public EmployeeWagesComputation()
     {
-        this.companyName = companyName;
-        this.empWagePerHour = empWagePerHour;
-        this.maxWokringDays = maxWorkingDays;
-        this.maxWorkingHrs = maxWorkingHrs;
+        System.out.println("Welcome to Employee Wage Computation Program..!");
     }
 
-    public void calculateEmployeeWage()
-    {
-        //variables
-        int monthlyEmpWage=0;
-        int totalWorkingDays=0;
-        int totalEmpHrs=0;
-        System.out.println("Welcome to Employee Computation Program");
+    public static void main(String[] args) {
 
-        while (totalWorkingDays<maxWokringDays && totalEmpHrs<maxWorkingHrs)
-        {
-            int empHrs=0;
-            int dailyEmpWage=0;
-            totalWorkingDays++;
-            double empCheck = Math.floor(Math.random() * 10) % 3;
-            switch ((int)empCheck) {
-                case IS_FULL_TIME:
-                    System.out.println("Employee is full time present");
-                    empHrs=8;
-                    break;
-                case IS_PART_TIME:
-                    System.out.println("Employee is part time present");
-                    empHrs=4;
-                default:
-                    System.out.println("Employee is absent");
-            }
-            dailyEmpWage = empWagePerHour *empHrs;
-            totalEmpHrs  += empHrs;
-            monthlyEmpWage += dailyEmpWage;
-        }
-        System.out.println("Employee Wage for a month in "+companyName+ " is "+monthlyEmpWage);
+        //Initializing the constructor by creating the object of the class.
+        EmployeeWagesComputation employee = new EmployeeWagesComputation();
+
+        //Calculating employee wage for different companies.
+        System.out.println("Calculating the salary for different companies : ............");
+        EmployeeWageBuilder company1 = new EmployeeWageBuilder("Tata",40,100,20);
+        company1.calculateTotalWage();
+        company1.print();
+        System.out.println();
+        EmployeeWageBuilder company2 = new EmployeeWageBuilder("Wipro",20,150,18);
+        company2.calculateTotalWage();
+        company2.print();
+        EmployeeWageBuilder company3 = new EmployeeWageBuilder("TCS",60,180,22);
+        company3.calculateTotalWage();
+        company3.print();
+        System.out.println();
+        EmployeeWageBuilder company4 = new EmployeeWageBuilder("Apple",30,190,26);
+        company4.calculateTotalWage();
+        company4.print();
+
     }
-    public static void main(String args[]) {
-        EmployeeWagesComputation Tata = new EmployeeWagesComputation("Tata",20,20,100);
-        Tata.calculateEmployeeWage();
-        EmployeeWagesComputation Wipro = new EmployeeWagesComputation("Wipro",15,25,150);
-        Wipro.calculateEmployeeWage();
-        EmployeeWagesComputation TCS= new EmployeeWagesComputation("TCS",20,30,200);
-        TCS.calculateEmployeeWage();
-    }
+
 }
