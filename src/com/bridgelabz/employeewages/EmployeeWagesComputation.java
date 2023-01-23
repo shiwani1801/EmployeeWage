@@ -6,6 +6,7 @@ public class EmployeeWagesComputation {
     {
         System.out.println("Welcome to Employee Wage Computation Program..!");
     }
+
     public static void main(String[] args) {
 
         //Initializing the constructor by creating the object of the class.
@@ -19,8 +20,6 @@ public class EmployeeWagesComputation {
         employeeWageBuilder.addCompanyEmployeeWage("TCS",60,180,22);
         employeeWageBuilder.addCompanyEmployeeWage("Apple",30,190,26);
         employeeWageBuilder.computeEmpWage();
-
-
 
     }
 
