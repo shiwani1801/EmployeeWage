@@ -20,6 +20,8 @@ public class EmployeeWagesComputation {
         employeeWageBuilder.addCompanyEmployeeWage("TCS",60,180,22);
         employeeWageBuilder.addCompanyEmployeeWage("Apple",30,190,26);
         employeeWageBuilder.computeEmpWage();
+        System.out.println("Total Wage for TCS Company : "+employeeWageBuilder.getTotalWage("TCS"));
+
 
     }
 

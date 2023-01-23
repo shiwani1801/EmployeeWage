@@ -1,8 +1,4 @@
 package com.bridgelabz.employeewages;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class CompanyEmpWage {
     //Declaring the object referred variables
     public final String companyName;
@@ -10,7 +6,6 @@ public class CompanyEmpWage {
     public final int maxWorkingHours;
     public final int maxWorkingDays;
     public int monthlySalary;
-    public Map<Integer,Integer> dailyWage = new HashMap<>();
 
     //Declaring Parameterised Constructor
     public CompanyEmpWage(String companyName, int empWagePerHour, int maxWorkingHours, int maxWorkingDays) {
