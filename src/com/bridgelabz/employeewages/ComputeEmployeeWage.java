@@ -9,4 +9,5 @@ public interface ComputeEmployeeWage {
     void addCompanyEmployeeWage(String companyName, int empWagePerHour, int maxWorkingHours, int maxWorkingDays);
     void computeEmpWage();
 
+
 }

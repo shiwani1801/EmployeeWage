@@ -9,7 +9,7 @@ public class EmployeeWagesComputation {
 
     public static void main(String[] args) {
 
-        //Initializing the constructor by creating the object of the class.
+        //Initializing the constructor by creating the object of the class
         EmployeeWagesComputation employee = new EmployeeWagesComputation();
 
         //Calculating employee wage for different companies.
